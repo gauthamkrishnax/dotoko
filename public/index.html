@@ -7,15 +7,15 @@
     <title>Dokoto Note Making</title>    
 </head>
 <script src="https://unpkg.com/feather-icons"></script>
-<body>
+<body class="bg-gray-100 font-ubuntu font-thin">
 
 
     <!-- MAIN PAGE -->
 
-    <div class="bg-gray-100 font-ubuntu flex">
+    <div>
 
         <!-- SIDE BAR -->
-        <aside class="bg-white h-screen shadow-md fixed px-12 pt-16 font-thin text-center text-gray-600 max-w-sm overflow-hidden">
+        <aside class="bg-white h-screen shadow-md fixed overflow-x-hidden px-12 pt-16 text-center text-gray-600 w-96">
             <h1 class="text-4xl tracking-widest">DOTOKO</h1>
             <h2 class="text-xl mt-5 tracking-widest">A simple solution for your note making.</h2>
             
@@ -31,12 +31,17 @@
             </ul>
             <img class="fixed w-72 left-24 bottom-0"  src="images/flower.svg" alt=" flower illustration">        
         </aside>
-        
+
         <!-- NOTEMAKING SECTION -->
 
-        <div class="">
-
-
+        <div class="h-screen bg-gray-100 ml-96 mr-10">
+            <div class="flex justify-between pt-16">
+                <form action="#" class=" -ml-2">
+                    <input type="text" name="searchbox" class="bg-primary border-2 border-transparent h-12 rounded text-right pr-14 text-3xl font-thin text-gray-500 outline-none focus:border-gray-400" placeholder="Search">
+                    <i data-feather="search" stroke-width="1" color="#6B7280" width="40" height="40" class="-ml-12 inline mb-3"></i>
+                </form>
+                <i data-feather="plus" stroke-width="1" color="#4B5563" width="45" height="45" class=" cursor-pointer"></i>     
+            </div>
         </div>
     </div>
     <script>feather.replace();</script>

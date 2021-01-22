@@ -8,12 +8,16 @@ module.exports = {
         secondary: "#FF9E8F"
       },
       fontFamily: {
-        ubuntu : "Ubuntu"
+        ubuntu : "Ubuntu, sans-serif"
       },
     },
   },
   variants: {
+    backgroundColor: ['hover','focus','active','checked'],
+    borderColor: ['hover','focus','active','checked'],
+    borderWidth: ['hover','focus','active','checked'],
     extend: {},
   },
-  plugins: [],
+  plugins: [
+  ],
 }
