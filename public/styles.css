@@ -31925,43 +31925,44 @@ video {
           animation: bounce 1s infinite;
 }
 
-input[type="text"]::-moz-placeholder{
+.search::-moz-placeholder{
   font-family: Ubuntu, sans-serif;
   font-size: 1.875rem;
   color:#6B7280;
   font-weight: lighter;
-  text-align: right;
   opacity: 100;
 }
 
-input[type="text"]:-ms-input-placeholder{
+.search:-ms-input-placeholder{
   font-family: Ubuntu, sans-serif;
   font-size: 1.875rem;
   color:#6B7280;
   font-weight: lighter;
-  text-align: right;
   opacity: 100;
 }
 
-input[type="text"]::placeholder{
+.search::placeholder{
   font-family: Ubuntu, sans-serif;
   font-size: 1.875rem;
   color:#6B7280;
   font-weight: lighter;
-  text-align: right;
   opacity: 100;
 }
 
-input[type="text"]:focus::-moz-placeholder{
+.search:focus::-moz-placeholder{
   opacity: 0;
 }
 
-input[type="text"]:focus:-ms-input-placeholder{
+.search:focus:-ms-input-placeholder{
   opacity: 0;
 }
 
-input[type="text"]:focus::placeholder{
+.search:focus::placeholder{
   opacity: 0;
+}
+
+.min-w-half{
+  min-width: 45%;
 }
 
 @media (min-width: 640px){

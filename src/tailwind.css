@@ -4,14 +4,19 @@
 @tailwind utilities;
 
 
-input[type="text"]::placeholder{
+.search::placeholder{
     font-family: Ubuntu, sans-serif;
     font-size: 1.875rem;
     color:#6B7280;
     font-weight: lighter;
-    text-align: right;
     opacity: 100;
 }
-input[type="text"]:focus::placeholder{
+.search:focus::placeholder{
     opacity: 0;
+}
+
+.min-w-half{
+
+    min-width: 45%;
+
 }
