@@ -1,2 +1,2 @@
 # dokoto
-A Notemaking app
+A Simple Notemaking app
