@@ -4,7 +4,7 @@
 
 A Simple Notemaking app
 
-#Tech :
+# Tech:
 
  - HTML
  - CSS (TAILWIND)
