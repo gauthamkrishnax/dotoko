@@ -22,11 +22,11 @@
             <!-- NAV LINKS -->
 
             <ul class="text-xl mt-12">
-                <li class="cursor-pointer mb-8 hover:underline">
-                    About
+                <li class="mb-8 ">
+                    <a href="https://github.com/gauthamkrishnax/dokoto" target="_blank" rel="noopener noreferrer" class="font-thin hover:underline">About</a>
                 </li>
-                <li class=" text-secondary cursor-pointer mb-8 hover:underline">
-                    Delete all notes
+                <li class=" text-secondary cursor-pointer mb-8">
+                   <button onclick="deleteallnotes()" class="font-thin hover:underline">Delete all notes</button> 
                 </li>
             </ul>
             <img class="fixed w-72 left-24 bottom-0"  src="images/flower.svg" alt=" flower illustration">        
@@ -40,108 +40,46 @@
                     <input type="text" name="searchbox" class="bg-primary border-2 border-transparent h-12 rounded text-right pr-14 text-3xl font-thin text-gray-500 outline-none focus:border-gray-400" placeholder="Search">
                     <i data-feather="search" stroke-width="1" color="#6B7280" width="40" height="40" class="-ml-12 inline mb-3"></i>
                 </form>
-                <i data-feather="plus" stroke-width="1" color="#4B5563" width="45" height="45" class=" cursor-pointer"></i>     
+                <button id="addnote" class=" my-1 focus:outline-none focus:border border-gray-200"><i data-feather="plus" stroke-width="1" color="#4B5563" width="45" height="45" class=" cursor-pointer hover:border border-gray-300 rounded-sm "></i></button>     
             </div>
 
             <!-- NOTES GRID -->
 
             <div class="mt-24 ml-10">
 
-                <ul class="flex flex-r flex-wrap gap-10">
+                <ul id="allnotes" class="flex flex-r flex-wrap gap-10">
 
                     <!-- CARDS LIST -->
-                    <div class="min-w-half flex-1 bg-primary rounded  p-8">
+          
+                    <div class="min-w-half max-w-lg flex-1 bg-primary rounded  p-8 noteelements ">
                         <li>
                             <div class="mb-4 flex justify-between items-center">
                                 <div class="flex items-center">
-                                    <h3 class=" text-gray-600 text-2xl font-medium ">Title of the Note</h3>
-                                    <i data-feather="check-square" stroke-width="1" color="black" width="25" height="25" class=" cursor-pointer inline ml-3 opacity-60 hover:opacity-90"></i>
+                                    <h3 class=" text-gray-600 text-2xl font-medium mr-3">Title of the Note</h3>
+                                    <button id="tobecrossedicon" class=""><i data-feather="check-square" stroke-width="1" color="black" width="25" height="25" class=" cursor-pointer inline opacity-60 hover:opacity-90"></i> </button>
+                                    <button id="crossedicon" class="hidden"><i data-feather="x-square" stroke-width="1" color="black" width="25" height="25" class=" cursor-pointer inline opacity-60 hover:opacity-90"></i> </button>
                                 </div>
-                                <i data-feather="trash" stroke-width="1" color="black" width="25" height="25" class=" cursor-pointer inline ml-3 opacity-60 hover:opacity-90"></i>
+                                <button><i data-feather="trash" stroke-width="1" color="black" width="25" height="25" class=" cursor-pointer inline opacity-60 hover:opacity-90"></i></button>
                             </div>    
-                            <p>This is a sample note. You should probably delete it or else save for my memory how about that?</p>
+                            <p>This is a sample note. You can use the + icon in the top right to add new notes, the square tick icon to strike the note and the trash icon to delete the note. Try deleting this one. </p>
                         </li>
-                    </div>
-
-                    <div class="min-w-half flex-1 bg-primary rounded  p-8">
-                        <li>
-                            <div class="mb-4 flex justify-between items-center">
-                                <div class="flex items-center">
-                                    <h3 class=" text-gray-600 text-2xl font-medium ">Title of the Note</h3>
-                                    <i data-feather="check-square" stroke-width="1" color="black" width="25" height="25" class=" cursor-pointer inline ml-3 opacity-60 hover:opacity-90"></i>
-                                </div>
-                                <i data-feather="trash" stroke-width="1" color="black" width="25" height="25" class=" cursor-pointer inline ml-3 opacity-60 hover:opacity-90"></i>
-                            </div>    
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, m dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua m dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua henderit in m dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim v voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
-                        </li>
-                    </div>    
-
-                    <li class="min-w-half flex-1">
-                        <div class="bg-primary rounded  p-8">
-                            <div class="mb-4 flex justify-between items-center">
-                                <div class="flex items-center">
-                                    <h3 class=" text-gray-600 text-2xl font-medium ">Title of the Note</h3>
-                                    <i data-feather="check-square" stroke-width="1" color="black" width="25" height="25" class=" cursor-pointer inline ml-3 opacity-60 hover:opacity-90"></i>
-                                </div>
-                                <i data-feather="trash" stroke-width="1" color="black" width="25" height="25" class=" cursor-pointer inline ml-3 opacity-60 hover:opacity-90"></i>
-                            </div>    
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
-                        </div>
-                    </li>
-
-                    <li class="min-w-half flex-1">
-                        <div class="bg-primary rounded  p-8">
-                            <div class="mb-4 flex justify-between items-center">
-                                <div class="flex items-center">
-                                    <h3 class=" text-gray-600 text-2xl font-medium ">Title of the Note</h3>
-                                    <i data-feather="check-square" stroke-width="1" color="black" width="25" height="25" class=" cursor-pointer inline ml-3 opacity-60 hover:opacity-90"></i>
-                                </div>
-                                <i data-feather="trash" stroke-width="1" color="black" width="25" height="25" class=" cursor-pointer inline ml-3 opacity-60 hover:opacity-90"></i>
-                            </div>    
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
-                        </div>
-                    </li>
-                
-                    <li class="min-w-half flex-1">
-                        <div class="bg-primary rounded  p-8">
-                            <div class="mb-4 flex justify-between items-center">
-                                <div class="flex items-center">
-                                    <h3 class=" text-gray-600 text-2xl font-medium ">Title of the Note</h3>
-                                    <i data-feather="check-square" stroke-width="1" color="black" width="25" height="25" class=" cursor-pointer inline ml-3 opacity-60 hover:opacity-90"></i>
-                                </div>
-                                <i data-feather="trash" stroke-width="1" color="black" width="25" height="25" class=" cursor-pointer inline ml-3 opacity-60 hover:opacity-90"></i>
-                            </div>    
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
-                        </div>
-                    </li>
-                    <li class="min-w-half flex-1">
-                        <div class="bg-primary rounded  p-8">
-                            <div class="mb-4 flex justify-between items-center">
-                                <div class="flex items-center">
-                                    <h3 class=" text-gray-600 text-2xl font-medium ">Title of the Note</h3>
-                                    <i data-feather="check-square" stroke-width="1" color="black" width="25" height="25" class=" cursor-pointer inline ml-3 opacity-60 hover:opacity-90"></i>
-                                </div>
-                                <i data-feather="trash" stroke-width="1" color="black" width="25" height="25" class=" cursor-pointer inline ml-3 opacity-60 hover:opacity-90"></i>
-                            </div>    
-                            <p>Lorem ipsum dolor sit amet, cat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
-                        </div>
-                    </li>
+                    </div>  
 
                 </ul>
             </div>
 
                   <!-- ADD NOTE OVERLAY -->
 
-            <div class="hidden fixed flex justify-center items-center top-0 bg-gray-900 bg-opacity-70 z-50 w-screen h-screen">
+            <div id="popup" class="hidden fixed flex justify-center items-center top-0 bg-gray-900 bg-opacity-70 z-50 w-screen h-screen">
                 <div class="bg-primary w-1/2 h-1/2 -ml-96 rounded p-6 shadow-lg">
                     <form action="#" class="h-full pb-10">
                         <div class="flex justify-end gap-10 mb-4">
-                            <i data-feather="check" stroke-width="1" color="black" width="40" height="25" class=" cursor-pointer inline opacity-60 hover:opacity-90"></i>
-                            <i data-feather="x" stroke-width="1" color="black" width="40" height="25" class=" cursor-pointer inline opacity-60 hover:opacity-90"></i>
+                            <button><i data-feather="check" stroke-width="1" color="black" width="40" height="25" class=" cursor-pointer inline opacity-60 hover:opacity-90"></i></button>
+                            <button id="popupclose"><i data-feather="x" stroke-width="1" color="black" width="40" height="25" class=" cursor-pointer inline opacity-60 hover:opacity-90"></i></button>
                         </div>                    
                         <div class="h-full pb-20">
-                            <input type="text" name="titlebox" class="bg-white border-2 border-transparent w-full h-12 rounded pl-4 mb-4 font-light text-gray-500 outline-none focus:border-gray-400" placeholder="Title">
-                            <textarea name="notes" class=" p-4 resize-none bg-white border-2 border-transparent w-full h-full rounded font-thin text-gray-500 outline-none focus:border-gray-400" placeholder="Your note goes here !"></textarea>    
+                            <input type="text" name="titlebox" class="bg-white border-2 border-transparent w-full h-12 rounded pl-4 mb-4 font-light text-gray-600 outline-none focus:border-gray-400" placeholder="Title">
+                            <textarea name="notes" class=" p-4 resize-none bg-white border-2 border-transparent w-full h-full rounded font-thin text-gray-600 outline-none focus:border-gray-400" placeholder="Your note goes here !"></textarea>    
                         </div>
                     </form>
                 </div>
