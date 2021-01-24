@@ -13,34 +13,37 @@
     <!-- MAIN PAGE -->
 
     <div>
-
+        <div class="fixed bg-white pb-4 w-full px-12 pt-16 flex justify-between z-50 lg:hidden">
+            <h1 class=" text-gray-600  text-5xl lg:text-4xl tracking-widest lg:hidden">DOTOKO</h1>
+            <i id="menu" data-feather="menu" stroke-width="1" color="#6B7280" width="50" height="50" class=" "></i>
+        </div>
         <!-- SIDE BAR -->
-        <aside class="bg-white h-screen shadow-md fixed overflow-x-hidden px-12 pt-16 text-center text-gray-600 w-96">
-            <h1 class="text-4xl tracking-widest">DOTOKO</h1>
-            <h2 class="text-xl mt-5 tracking-widest">A simple solution for your note making.</h2>
+        <aside id="sidebar" class="bg-white h-full shadow-md fixed px-12 pt-16 lg:text-center text-gray-600 w-full lg:w-96 hidden lg:inline-block  z-40">
+            <h1 class=" text-5xl lg:text-4xl tracking-widest">DOTOKO</h1>
+            <h2 class=" text-2xl lg:text-xl mt-12 lg:mt-5 pr-32 leading-normal lg:pr-0 tracking-widest">A simple solution for your note making.</h2>
             
             <!-- NAV LINKS -->
 
-            <ul class="text-xl mt-12">
-                <li class="mb-8 ">
-                    <a href="https://github.com/gauthamkrishnax/dokoto" target="_blank" rel="noopener noreferrer" class="font-thin hover:underline">About</a>
+            <ul class="text-2xl lg:text-xl mt-12">
+                <li class="mb-10 lg:mb-8">
+                   <a href="https://github.com/gauthamkrishnax/dokoto" target="_blank" rel="noopener noreferrer" class="font-thin hover:underline">About</a>
                 </li>
                 <li class=" text-secondary cursor-pointer mb-8">
                    <button onclick="deleteallnotes()" class="font-thin hover:underline">Delete all notes</button> 
                 </li>
             </ul>
-            <img class="fixed w-72 left-24 bottom-0"  src="images/flower.svg" alt=" flower illustration">        
+            <img class="absolute m-auto  left-14 right-0 -bottom-8"  src="images/flower.svg" alt=" flower illustration">   
         </aside>
 
         <!-- NOTEMAKING SECTION -->
 
-        <div class="bg-gray-100 ml-96 mr-10 mb-32">
-            <div class="flex justify-between pt-16">
-                <form action="#" class=" -ml-2">
-                    <input type="text" name="searchbox" class="bg-primary border-2 border-transparent h-12 rounded text-right pr-14 text-3xl font-thin text-gray-500 outline-none focus:border-gray-400" placeholder="Search">
+        <div class="bg-gray-100 lg:ml-96 mr-10 mb-32">
+            <div class="inline-block lg:flex lg:justify-between pt-36 lg:pt-16">
+                <form action="#" class=" mr-10 lg:mr-0 lg:-ml-2">
+                    <input type="text" name="searchbox" class="bg-primary border-2 border-transparent h-16 lg:h-12 rounded text-right pr-14 text-3xl font-thin text-gray-500 outline-none focus:border-gray-400" placeholder="Search">
                     <i data-feather="search" stroke-width="1" color="#6B7280" width="40" height="40" class="-ml-12 inline mb-3"></i>
                 </form>
-                <button id="addnote" class=" my-1 focus:outline-none focus:border border-gray-200"><i data-feather="plus" stroke-width="1" color="#4B5563" width="45" height="45" class=" cursor-pointer hover:border border-gray-300 rounded-sm "></i></button>     
+                <button id="addnote" class=" bg-primary lg:bg-opacity-0 rounded-md shadow-lg lg:shadow-none lg:block fixed lg:static bottom-16 right-10  my-1 focus:outline-none focus:border border-gray-200"><i data-feather="plus" stroke-width="1" color="#4B5563" width="50" height="50" class=" cursor-pointer hover:border border-gray-300 rounded-sm "></i></button>     
             </div>
 
             <!-- NOTES GRID -->
@@ -51,15 +54,15 @@
 
                     <!-- CARDS LIST -->
           
-                    <div class="min-w-half max-w-lg flex-1 bg-primary rounded  p-8 noteelements ">
+                    <div class="max-w-3xl flex-1 bg-primary rounded  p-8 noteelements ">
                         <li>
                             <div class="mb-4 flex justify-between items-center">
                                 <div class="flex items-center">
-                                    <h3 class=" text-gray-600 text-2xl font-medium mr-3">Title of the Note</h3>
+                                    <h3 class=" text-gray-600 text-2xl font-medium mr-3">Title of the Note </h3>
                                     <button id="tobecrossedicon" class=""><i data-feather="check-square" stroke-width="1" color="black" width="25" height="25" class=" cursor-pointer inline opacity-60 hover:opacity-90"></i> </button>
                                     <button id="crossedicon" class="hidden"><i data-feather="x-square" stroke-width="1" color="black" width="25" height="25" class=" cursor-pointer inline opacity-60 hover:opacity-90"></i> </button>
                                 </div>
-                                <button><i data-feather="trash" stroke-width="1" color="black" width="25" height="25" class=" cursor-pointer inline opacity-60 hover:opacity-90"></i></button>
+                                <button><i data-feather="trash" stroke-width="1" color="black" width="25" height="25" class="ml-8 cursor-pointer inline opacity-60 hover:opacity-90"></i></button>
                             </div>    
                             <p>This is a sample note. You can use the + icon in the top right to add new notes, the square tick icon to strike the note and the trash icon to delete the note. Try deleting this one. </p>
                         </li>
@@ -70,8 +73,8 @@
 
                   <!-- ADD NOTE OVERLAY -->
 
-            <div id="popup" class="hidden fixed flex justify-center items-center top-0 bg-gray-900 bg-opacity-70 z-50 w-screen h-screen">
-                <div class="bg-primary w-1/2 h-1/2 -ml-96 rounded p-6 shadow-lg">
+            <div id="popup" class="hidden fixed flex justify-center items-center top-0  bg-gray-900 bg-opacity-70 z-10 w-full h-full">
+                <div class="bg-primary w-3/4 h-1/2 lg:w-1/2 lg:h-1/2 lg:-ml-96 rounded p-6 shadow-lg">
                     <form action="#" class="h-full pb-10">
                         <div class="flex justify-end gap-10 mb-4">
                             <button><i data-feather="check" stroke-width="1" color="black" width="40" height="25" class=" cursor-pointer inline opacity-60 hover:opacity-90"></i></button>
