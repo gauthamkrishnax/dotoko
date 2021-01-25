@@ -21,12 +21,14 @@ deleteallnotes = () => {
 }
 
 addnote.addEventListener("click" , () => {
-    popup.classList.remove("hidden")
+    popup.classList.toggle("hidden")
+    popup.classList.toggle("flex")
     allnotes.classList.toggle("hidden")
 });
 
 popupclose.addEventListener("click", () => {
     popup.classList.add("hidden")
+    popup.classList.toggle("flex")
     allnotes.classList.toggle("hidden")
 });
 
@@ -40,6 +42,7 @@ addEventListener("keydown", e=>{
 popup.addEventListener("click", (e) =>{
     if(e.target.id==="popup"){
         popup.classList.add("hidden")
+        popup.classList.toggle("flex")
         allnotes.classList.toggle("hidden")
     }
 })
@@ -68,3 +71,9 @@ noteelements.forEach(noteelement => {
         };
     })
 })
+
+
+
+// ADD NOTE
+
+
