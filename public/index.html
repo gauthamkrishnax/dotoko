@@ -23,7 +23,7 @@
     <div>
         <div class="fixed bg-white pb-4 w-full px-12 pt-16 flex justify-between z-50 lg:hidden">
             <h1 class=" text-gray-600  text-5xl lg:text-4xl tracking-widest lg:hidden">DOTOKO</h1>
-            <i id="menu" data-feather="menu" stroke-width="1" color="#6B7280" width="50" height="50" class=" "></i>
+            <button id="menu"><i data-feather="menu" stroke-width="1" color="#6B7280" width="50" height="50"></i></button>
         </div>
         <!-- SIDE BAR -->
         <aside id="sidebar" class="bg-white h-full shadow-md fixed px-12 pt-16 lg:text-center text-gray-600 w-full lg:w-96 hidden lg:inline-block  z-40">
@@ -64,13 +64,13 @@
           
                     <div class="min-w-half max-w-lg flex-1 bg-primary rounded  p-8 noteelements ">
                         <li>
-                            <div class="mb-4 flex justify-between items-center">
+                            <div class="mb-4 flex justify-between items-center gap-5">
                                 <div class="flex items-center">
                                     <h3 class=" text-gray-600 text-2xl font-medium mr-3">Title of the Note </h3>
-                                    <button id="tobecrossedicon" class=""><i data-feather="check-square" stroke-width="1" color="black" width="25" height="25" class=" cursor-pointer inline opacity-60 hover:opacity-90"></i> </button>
-                                    <button id="crossedicon" class="hidden"><i data-feather="x-square" stroke-width="1" color="black" width="25" height="25" class=" cursor-pointer inline opacity-60 hover:opacity-90"></i> </button>
+                                    <button class="tobecrossedicon "><i data-feather="check-square" stroke-width="1" color="black" width="25" height="25" class=" cursor-pointer inline opacity-60 hover:opacity-90"></i> </button>
+                                    <button class="crossedicon hidden"><i data-feather="x-square" stroke-width="1" color="black" width="25" height="25" class=" cursor-pointer inline opacity-60 hover:opacity-90"></i> </button>
                                 </div>
-                                <button><i data-feather="trash" stroke-width="1" color="black" width="25" height="25" class="ml-8 cursor-pointer inline opacity-60 hover:opacity-90"></i></button>
+                                <button class="deletenote"><i data-feather="trash" stroke-width="1" color="black" width="25" height="25" class="cursor-pointer inline opacity-60 hover:opacity-90"></i></button>
                             </div>    
                             <p>This is a sample note. You can use the + icon in the top right to add new notes, the square tick icon to strike the note and the trash icon to delete the note. Try deleting this one. </p>
                         </li>
@@ -81,7 +81,7 @@
 
                   <!-- ADD NOTE OVERLAY -->
 
-            <div id="popup" class="hidden fixed justify-center items-center top-0  bg-gray-900 bg-opacity-70 z-10 w-full h-full">
+            <div id="popup" class="hidden fixed justify-center items-center top-0  bg-gray-900 bg-opacity-70 z-10 w-full h-full ">
                 <div class="bg-primary w-3/4 h-1/2 lg:w-1/2 lg:h-1/2 lg:-ml-96 rounded p-6 shadow-lg">
                     <form action="#" id="addnotesform" class="h-full pb-10">
                         <div class="flex justify-end gap-10 mb-4">
@@ -98,7 +98,7 @@
 
         </div>
     </div>
-    <script>feather.replace();</script>
     <script src="script.js"></script>
+    <script>feather.replace();</script>
 </body>
 </html>
