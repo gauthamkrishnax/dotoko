@@ -58,11 +58,11 @@
 
             <div class="mt-24 ml-10">
 
-                <ul id="allnotes" class="flex flex-r flex-wrap gap-10">
+                <ul id="allnotes" class="flex flex-row flex-wrap gap-10">
 
                     <!-- CARDS LIST -->
           
-                    <div class="max-w-3xl flex-1 bg-primary rounded  p-8 noteelements ">
+                    <div class="min-w-half max-w-lg flex-1 bg-primary rounded  p-8 noteelements ">
                         <li>
                             <div class="mb-4 flex justify-between items-center">
                                 <div class="flex items-center">
@@ -83,14 +83,14 @@
 
             <div id="popup" class="hidden fixed justify-center items-center top-0  bg-gray-900 bg-opacity-70 z-10 w-full h-full">
                 <div class="bg-primary w-3/4 h-1/2 lg:w-1/2 lg:h-1/2 lg:-ml-96 rounded p-6 shadow-lg">
-                    <form action="#" class="h-full pb-10">
+                    <form action="#" id="addnotesform" class="h-full pb-10">
                         <div class="flex justify-end gap-10 mb-4">
-                            <button><i data-feather="check" stroke-width="1" color="black" width="40" height="25" class=" cursor-pointer inline opacity-60 hover:opacity-90"></i></button>
+                            <button id="addnotesubmit" type="submit"><i data-feather="check" stroke-width="1" color="black" width="40" height="25" class=" cursor-pointer inline opacity-60 hover:opacity-90"></i></button>
                             <button id="popupclose"><i data-feather="x" stroke-width="1" color="black" width="40" height="25" class=" cursor-pointer inline opacity-60 hover:opacity-90"></i></button>
                         </div>                    
                         <div class="h-full pb-20">
                             <input type="text" name="titlebox" class="bg-white border-2 border-transparent w-full h-12 rounded pl-4 mb-4 font-light text-gray-600 outline-none focus:border-gray-400" placeholder="Title">
-                            <textarea name="notes" class=" p-4 resize-none bg-white border-2 border-transparent w-full h-full rounded font-thin text-gray-600 outline-none focus:border-gray-400" placeholder="Your note goes here !"></textarea>    
+                            <textarea name="note" class=" p-4 resize-none bg-white border-2 border-transparent w-full h-full rounded font-thin text-gray-600 outline-none focus:border-gray-400" placeholder="Your note goes here !"></textarea>    
                         </div>
                     </form>
                 </div>

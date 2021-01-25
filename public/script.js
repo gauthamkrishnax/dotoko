@@ -1,3 +1,4 @@
+
 const menu = document.querySelector("#menu");
 const sidebar = document.querySelector("#sidebar");
 
@@ -35,6 +36,7 @@ popupclose.addEventListener("click", () => {
 addEventListener("keydown", e=>{
     if(e.key=="Escape"){
         popup.classList.add("hidden")
+        popup.classList.toggle("flex")
         allnotes.classList.toggle("hidden")
     }
 })
@@ -77,3 +79,40 @@ noteelements.forEach(noteelement => {
 // ADD NOTE
 
 
+const addnotesform = document.querySelector("#addnotesform");
+
+const addnotetohtml = (title, note) => {
+
+    allnotes.innerHTML += `
+    
+    <div class=" min-w-half max-w-lg flex-1 bg-primary rounded  p-8 noteelements ">
+                        <li>
+                            <div class=" mb-4 flex justify-between items-center">
+                                <div class="flex items-center">
+                                    <h3 class=" text-gray-600 text-2xl font-medium mr-3">${title}</h3>
+                                    <button id="tobecrossedicon" class=""><i data-feather="check-square" stroke-width="1" color="black" width="25" height="25" class=" cursor-pointer inline opacity-60 hover:opacity-90"></i> </button>
+                                    <button id="crossedicon" class="hidden"><i data-feather="x-square" stroke-width="1" color="black" width="25" height="25" class=" cursor-pointer inline opacity-60 hover:opacity-90"></i> </button>
+                                </div>
+                                <button><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="feather feather-trash ml-8 cursor-pointer inline opacity-60 hover:opacity-90" color="black"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path></svg></button>
+                            </div>    
+                            <p>${note}</p>
+                        </li>
+                    </div>  
+
+                    `
+
+}
+
+addnotesform.addEventListener('submit', e =>{
+    e.preventDefault();
+    const title = addnotesform.titlebox.value.trim();
+    const note = addnotesform.note.value.trim();
+
+    if(title.length || note.length){
+
+        addnotetohtml(title, note)
+    }
+    popup.classList.add("hidden")
+    popup.classList.toggle("flex")
+    allnotes.classList.toggle("hidden")
+})
