@@ -6,6 +6,8 @@ const popup = document.querySelector("#popup");
 const popupclose = document.querySelector("#popupclose")
 const allnotes = document.querySelector("#allnotes")
 
+const search = document.querySelector("#search")
+
 menu.addEventListener("click", ()=>{
     sidebar.classList.toggle("hidden");
 })
@@ -15,6 +17,26 @@ deleteallnotes = () => {
         allnotes.removeChild(allnotes.firstChild);
     }
 }
+
+
+// SEARCH NOTES
+
+const showsearchtermonly = searchterm =>{
+
+    const notetitles = document.querySelectorAll("#allnotes h3")
+    Array.from(notetitles)
+    .filter( todo => !todo.textContent.toLowerCase().includes(searchterm))
+    .forEach( todo => todo.parentElement.parentElement.parentElement.parentElement.classList.add("hidden"))
+
+    Array.from(notetitles)
+    .filter( todo => todo.textContent.toLowerCase().includes(searchterm))
+    .forEach( todo => todo.parentElement.parentElement.parentElement.parentElement.classList.remove("hidden"))
+}
+
+search.addEventListener('keyup', ()=> {
+    const searchterm = search.value.trim().toLowerCase();
+    showsearchtermonly(searchterm);
+})
 
 // ADD NOTE FUNCTIONS
 
@@ -75,7 +97,8 @@ addnotesform.addEventListener('submit', e =>{
     }
     feather.replace();
     popup.classList.toggle("hidden")
-    allnotes.classList.toggle("hidden")
+    allnotes.classList.remove("hidden")
+    popup.classList.toggle("flex")
 })
 
 
@@ -85,45 +108,23 @@ addnotesform.addEventListener('submit', e =>{
 addnote.addEventListener("click" , () => {
     popup.classList.remove("hidden");
     popup.classList.add("flex");
-    allnotes.classList.toggle("hidden");
+    allnotes.classList.add("hidden");
 
 });
 
 popup.addEventListener('click', e=>{
     if(e.target.id === "popupclose" || e.target.classList.contains("feather-x")){
-        popup.classList.remove(flex);
+        popup.classList.remove("flex");
         popup.classList.toggle("hidden", true);
-        allnotes.classList.toggle("hidden");
-    };
+        allnotes.classList.remove("hidden");
+      };
 
     if(e.target.id === "popup"){
         popup.classList.remove("flex");
         popup.classList.toggle("hidden", true);
-        allnotes.classList.toggle("hidden");
+        allnotes.classList.remove("hidden")
     };
 })
-
-
-
-// popupclose.addEventListener("click", () => {
-//     popup.classList.add("hidden")
-//     allnotes.classList.toggle("hidden")
-// });
-
-// addEventListener("keydown", e=>{
-//     if(e.key=="Escape"){
-//         popup.classList.add("hidden")
-//         allnotes.classList.toggle("hidden")
-//     }
-// });
-
-// popup.addEventListener("click", (e) =>{
-//     if(e.target.id==="popup"){
-//         popup.classList.add("hidden")
-//         allnotes.classList.toggle("hidden")
-//     }
-// })
-
 
 
 

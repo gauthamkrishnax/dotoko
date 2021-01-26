@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
-    <title>Dokoto Note Making</title>    
+    <title>Dotoko Note Making</title>    
 </head>
 <script src="https://unpkg.com/feather-icons"></script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-NR76XPRV95"></script>
@@ -48,7 +48,7 @@
         <div class="bg-gray-100 lg:ml-96 mr-10 mb-32">
             <div class="inline-block lg:flex lg:justify-between pt-36 lg:pt-16">
                 <form action="#" class=" mr-10 lg:mr-0 lg:-ml-2">
-                    <input type="text" name="searchbox" class="bg-primary border-2 border-transparent h-16 lg:h-12 rounded text-right pr-14 text-3xl font-thin text-gray-500 outline-none focus:border-gray-400" placeholder="Search">
+                    <input type="text" id="search" name="searchbox" class="bg-primary border-2 border-transparent h-16 lg:h-12 rounded text-right pr-14 text-3xl font-thin text-gray-500 outline-none focus:border-gray-400" placeholder="Search">
                     <i data-feather="search" stroke-width="1" color="#6B7280" width="40" height="40" class="-ml-12 inline mb-3"></i>
                 </form>
                 <button id="addnote" class=" bg-primary lg:bg-opacity-0 rounded-md shadow-lg lg:shadow-none lg:block fixed lg:static bottom-16 right-10  my-1 focus:outline-none focus:border border-gray-200"><i data-feather="plus" stroke-width="1" color="#4B5563" width="50" height="50" class=" cursor-pointer hover:border border-gray-300 rounded-sm "></i></button>     
@@ -62,7 +62,7 @@
 
                     <!-- CARDS LIST -->
           
-                    <div class="min-w-half max-w-lg flex-1 bg-primary rounded  p-8 noteelements ">
+                    <div class="min-w-half max-w-lg flex-1 bg-primary rounded  p-8">
                         <li>
                             <div class="mb-4 flex justify-between items-center gap-5">
                                 <div class="flex items-center">
@@ -86,7 +86,7 @@
                     <form action="#" id="addnotesform" class="h-full pb-10">
                         <div class="flex justify-end gap-10 mb-4">
                             <button id="addnotesubmit" type="submit"><i data-feather="check" stroke-width="1" color="black" width="40" height="25" class=" cursor-pointer inline opacity-60 hover:opacity-90"></i></button>
-                            <button id="popupclose"><i data-feather="x" stroke-width="1" color="black" width="40" height="25" class=" cursor-pointer inline opacity-60 hover:opacity-90"></i></button>
+                            <button id="popupclose" type="button"><i data-feather="x" stroke-width="1" color="black" width="40" height="25" class=" cursor-pointer inline opacity-60 hover:opacity-90"></i></button>
                         </div>                    
                         <div class="h-full pb-20">
                             <input type="text" name="titlebox" class="bg-white border-2 border-transparent w-full h-12 rounded pl-4 mb-4 font-light text-gray-600 outline-none focus:border-gray-400" placeholder="Title">
