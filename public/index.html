@@ -32,7 +32,7 @@
                    <button onclick="deleteallnotes()" class="font-thin hover:underline">Delete all notes</button> 
                 </li>
             </ul>
-            <img class="absolute m-auto  left-14 right-0 -bottom-8"  src="images/flower.svg" alt=" flower illustration">   
+            <img class="absolute m-auto left-14 right-0 -bottom-8 "  src="images/flower.svg" alt=" flower illustration">   
         </aside>
 
         <!-- NOTEMAKING SECTION -->
@@ -53,7 +53,7 @@
                 <ul id="allnotes" class="flex flex-row flex-wrap gap-10">
 
                     <!-- CARDS LIST -->
-          
+<!--           
                     <div class="min-w-half max-w-lg flex-1 bg-primary rounded  p-8">
                         <li>
                             <div class="mb-4 flex justify-between items-center gap-5">
@@ -66,7 +66,7 @@
                             </div>    
                             <p>This is a sample note. You can use the + icon in the top right to add new notes, the square tick icon to strike the note and the trash icon to delete the note. Try deleting this one. </p>
                         </li>
-                    </div>  
+                    </div>   -->
 
                 </ul>
             </div>
@@ -90,6 +90,30 @@
 
         </div>
     </div>
+
+        <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.2.5/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+        https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/8.2.5/firebase-firestore.js"></script>
+
+    <script>
+    // Your web app's Firebase configuration
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    var firebaseConfig = {
+        apiKey: "AIzaSyD8iyKKqNzqMTeUX3AxSHcOqvVLRQY1Dmg",
+        authDomain: "dotoko-706fc.firebaseapp.com",
+        projectId: "dotoko-706fc",
+        storageBucket: "dotoko-706fc.appspot.com",
+        messagingSenderId: "674500211076",
+        appId: "1:674500211076:web:b6cfde5bdea5a09d746dd1",
+        measurementId: "G-G50TWRDW81"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    const db = firebase.firestore();
+    </script>
     <script src="script.js"></script>
     <script>feather.replace();</script>
 </body>
