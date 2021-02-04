@@ -100,7 +100,7 @@ const addnotetohtml = (Notes, id) => {
 
     allnotes.innerHTML += `
     
-    <div class=" min-w-half max-w-lg flex-1 bg-primary rounded  p-8 noteelements ">
+    <div class=" w-screen md:w-auto  min-w-half max-w-lg flex-1 bg-primary rounded  p-8 noteelements ">
                         <li data-id="${id}">
                             <div class=" mb-4 flex justify-between items-center">
                                 <div class="flex items-center">
